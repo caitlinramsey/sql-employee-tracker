@@ -1,8 +1,7 @@
 // Dependencies list
-const msql = require('mysql');
+const mysql = require('mysql');
 const inquirer = require('inquirer');
 const util = require('util');
-const tableHeader = require('table.header'); // Nice header for the application
 
 // Creates connection to MySQL Workbench
 let connection = mysql.createConnection({
@@ -23,7 +22,7 @@ connection.connect(function (err) {
 
 // Cute welcome
 console.table(
-    "\n------------ EMPLOYEE TRACKER ------------\n" 
+    "\n------------ WELCOME TO YOUR EMPLOYEE TRACKER ------------\n" 
 )
 
 // Ask questions to figure out what they want to do
