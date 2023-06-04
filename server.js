@@ -1,14 +1,14 @@
 // Dependencies list
-const mysql = require('mysql');
+const mysql = require('mysql2');
 const inquirer = require('inquirer');
 const util = require('util');
 
 // Creates connection to MySQL Workbench
 let connection = mysql.createConnection({
     host: 'localhost',
-    port: 3001,
+    port: 3306,
     user: 'root',
-    password: '',
+    password: '123456',
     database: 'employees_db'
 });
 
@@ -16,16 +16,16 @@ connection.query = util.promisify(connection.query);
 
 // Begin the application once connection is established
 connection.connect(function (err) {
-    if (err) throw (err);
+    if (err) throw err;
     initialQuestions();
 })
 
-// Cute welcome
+// Cute welcome message
 function title() {
-    const topLine = "!================================================!\n";
-    const bottomLine = "\!================================================!\n";
-    const spaceBetween = "!                                                !\n";
-    const bodyText = "!  WELCOME TO THE EMPLOYEE MANAGER APPLICATION   !\n";
+    const topLine = ".================================================.\n";
+    const bottomLine = "\.================================================.\n";
+    const spaceBetween = "|                                                |\n";
+    const bodyText = "|  WELCOME TO THE EMPLOYEE MANAGER APPLICATION   |\n";
     const title = topLine + spaceBetween + spaceBetween + bodyText + spaceBetween + spaceBetween + bottomLine;
     console.log('\n\n' + title + '\n')
   }
