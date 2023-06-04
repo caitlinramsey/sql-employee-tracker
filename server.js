@@ -17,7 +17,7 @@ connection.query = util.promisify(connection.query);
 // Begin the application once connection is established
 connection.connect(function (err) {
     if (err) throw err;
-    initialQuestions();
+    begin();
 })
 
 // Cute welcome message
@@ -92,8 +92,6 @@ const initialQuestions = async () => {
         initialQuestions();
     };
 }
-
-begin();
 
 
 // Viewing all departments
