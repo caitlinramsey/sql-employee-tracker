@@ -21,9 +21,19 @@ connection.connect(function (err) {
 })
 
 // Cute welcome
-console.table(
-    "\n------------ WELCOME TO YOUR EMPLOYEE TRACKER ------------\n" 
-)
+function title() {
+    const topLine = "!================================================!\n";
+    const bottomLine = "\!================================================!\n";
+    const spaceBetween = "!                                                !\n";
+    const bodyText = "!  WELCOME TO THE EMPLOYEE MANAGER APPLICATION   !\n";
+    const title = topLine + spaceBetween + spaceBetween + bodyText + spaceBetween + spaceBetween + bottomLine;
+    console.log('\n\n' + title + '\n')
+  }
+
+function begin() {
+    title();
+    initialQuestions();
+}
 
 // Ask questions to figure out what they want to do
 const initialQuestions = async () => {
@@ -74,6 +84,7 @@ const initialQuestions = async () => {
 
             case 'Exit':
                 connection.end();
+                console.log('Goodbye!');
                 break;
         };
     } catch (err) {
@@ -81,6 +92,8 @@ const initialQuestions = async () => {
         initialQuestions();
     };
 }
+
+begin();
 
 
 // Viewing all departments
