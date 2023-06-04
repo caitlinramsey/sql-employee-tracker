@@ -19,13 +19,13 @@ VALUES ('Garry', 'Gergich', 9, 1);
 INSERT INTO employees (first_name, last_name, role_id, manager_id)
 VALUES ('Ann', 'Perkins', 10, null);
 
-INSERT INTO department (name)
+INSERT INTO department (department_name)
 VALUES('Parks Department');
-INSERT INTO department (name)
+INSERT INTO department (department_name)
 VALUES('Government of Pawnee');
-INSERT INTO department (name)
+INSERT INTO department (department_name)
 VALUES('City Manager');
-INSERT INTO department (name)
+INSERT INTO department (department_name)
 VALUES('Health Department');
 
 INSERT INTO role (title, salary, department_id)

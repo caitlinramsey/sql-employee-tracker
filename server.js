@@ -102,7 +102,7 @@ const viewDepartments = async () => {
         connection.query(query, function (err, res) {
             if (err) throw err;
             let departmentArray = [];
-            res.forEach(department => departmentArray(department));
+            res.forEach(department => departmentArray.push(department));
             console.table(departmentArray);
             initialQuestions();
         });
@@ -116,12 +116,12 @@ const viewDepartments = async () => {
 const viewEmployees = async () => {
     console.log('Employee View');
     try {
-        let query = 'SELECT * FROM employee';
+        let query = 'SELECT * FROM employees';
         connection.query(query, function (err, res) {
             if (err) throw err;
-            let employeeArray = [];
-            res.forEach(employee => employeeArray(employee));
-            console.table(employeeArray);
+            let employeesArray = [];
+            res.forEach(employees => employeesArray.push(employees));
+            console.table(employeesArray);
             initialQuestions();
         });
     } catch (err) {
@@ -138,7 +138,7 @@ const viewRoles = async () => {
         connection.query(query, function (err, res) {
             if (err) throw err;
             let roleArray = [];
-            res.forEach(role => roleArray(role));
+            res.forEach(role => roleArray.push(role));
             console.table(roleArray);
             initialQuestions();
         });
