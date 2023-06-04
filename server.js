@@ -180,7 +180,7 @@ const addEmployees = async () => {
 
         let roles = await connection.query('SELECT * FROM role');
 
-        let managers = await connection.query('SELECT * FROM employee');
+        let managers = await connection.query('SELECT * FROM employees');
 
         let answer = await inquirer.prompt([
             {
@@ -288,7 +288,7 @@ const updateRole = async () => {
     try {
         console.log('Employee Update');
 
-        let employees = await connection.query('SELECT * employee')
+        let employees = await connection.query('SELECT * employees')
 
         let employeeSelect = await inquirer.prompt ([
             {
