@@ -13,11 +13,11 @@ VALUES ('April', 'Ludgate', 6, 1);
 INSERT INTO employees (first_name, last_name, role_id, manager_id)
 VALUES ('Chris', 'Traeger', 7, null);
 INSERT INTO employees (first_name, last_name, role_id, manager_id)
-VALUES ('Ben', 'Wyatt', 7, 7);
+VALUES ('Ben', 'Wyatt', 8, 7);
 INSERT INTO employees (first_name, last_name, role_id, manager_id)
-VALUES ('Garry', 'Gergich', 8, 1);
+VALUES ('Garry', 'Gergich', 9, 1);
 INSERT INTO employees (first_name, last_name, role_id, manager_id)
-VALUES ('Ann', 'Perkins', 9, null);
+VALUES ('Ann', 'Perkins', 10, null);
 
 INSERT INTO department (name)
 VALUES('Parks Department');
@@ -30,21 +30,21 @@ VALUES('Health Department');
 
 INSERT INTO role (title, salary, department_id)
 VALUES('Director', 65000, 1);
-INSERT INTO role (name)
+INSERT INTO role (title, salary, department_id)
 VALUES('Deputy Director', 55000, 1);
-INSERT INTO role (name)
+INSERT INTO role (title, salary, department_id)
 VALUES('Permits Security', 50000, 1);
-INSERT INTO role (name)
+INSERT INTO role (title, salary, department_id)
 VALUES('Administrator', 50000, 1);
-INSERT INTO role (name)
+INSERT INTO role (title, salary, department_id)
 VALUES('Utilities', 52000, 2);
-INSERT INTO role (name)
+INSERT INTO role (title, salary, department_id)
 VALUES('Assistant', 40000, 1);
-INSERT INTO role (name)
+INSERT INTO role (title, salary, department_id)
 VALUES('City Manager', 95000, 3);
-INSERT INTO role (name)
+INSERT INTO role (title, salary, department_id)
 VALUES('Assistant City Manager', 93000, 3);
-INSERT INTO role (name)
+INSERT INTO role (title, salary, department_id)
 VALUES('Office Manager', 82000, 1);
-INSERT INTO role (name)
+INSERT INTO role (title, salary, department_id)
 VALUES('Public Relations Director', 76000, 4);
