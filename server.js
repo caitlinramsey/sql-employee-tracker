@@ -217,14 +217,14 @@ const addEmployees = async () => {
             },
         ])
 
-        let result = await connection.query('INSERT INTO department SET?', {
+        let result = await connection.query('INSERT INTO employees SET?', {
             first_name: answer.firstName,
             last_name: answer.lastName,
             role_id: (answer.employeeRoleId),
             manager_id: (answer.employeeManagerId)
         });
 
-        console.log(`${answer.firstName} ${answer.lastName} added successfully to departments.\n`)
+        console.log(`${answer.firstName} ${answer.lastName} added successfully to employees.\n`)
         initialQuestions();
     } catch (err) {
         console.log(err);
@@ -237,7 +237,7 @@ const addRoles = async () => {
     try {
         console.log('Role Add');
 
-        let departments = await connection.query('SELECT * department')
+        let departments = await connection.query('SELECT * FROM department')
 
         let answer = await inquirer.prompt ([
             {
@@ -288,7 +288,7 @@ const updateRole = async () => {
     try {
         console.log('Employee Update');
 
-        let employees = await connection.query('SELECT * employees')
+        let employees = await connection.query('SELECT * FROM employees')
 
         let employeeSelect = await inquirer.prompt ([
             {
@@ -320,7 +320,7 @@ const updateRole = async () => {
             }
         ]);
 
-        let result = await connection.query('UPDATE employee SET ? WHERE ?', [{ role_id: roleSelect.role }, { id: employeeSelect.employee }]);
+        let result = await connection.query('UPDATE employees SET ? WHERE ?', [{ role_id: roleSelect.role }, { id: employeeSelect.employees }]);
 
         console.log(`The role has been updated successfully.\n`);
         initialQuestions();
