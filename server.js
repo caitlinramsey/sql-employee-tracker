@@ -181,8 +181,6 @@ const addEmployees = async () => {
         let roles = await connection.query('SELECT * FROM roles');
 
         let managers = await connection.query('SELECT * FROM employees');
-        
-        let department = await connection.query('SELECT * FROM department');
 
         let answer = await inquirer.prompt([
             {
@@ -217,25 +215,13 @@ const addEmployees = async () => {
                 }),
                 message: "Who is this employee's manager's ID?"
             },
-            {
-                name: 'departmentId',
-                type: 'list',
-                choices: department.map((department) => {
-                    return {
-                        name: department.department_name,
-                        value: department.id
-                    }
-                }),
-                message: 'What department is the employee being added to?'
-            },
         ])
 
         let result = await connection.query('INSERT INTO employees SET?', {
             first_name: answer.firstName,
             last_name: answer.lastName,
-            roles_title: (answer.employeeRolesId),
-            manager_id: (answer.employeeManagerId),
-            department_name: (answer.departmentId)
+            roles_id: (answer.employeeRolesId),
+            manager_id: (answer.employeeManagerId)
         });
 
         console.log(`${answer.firstName} ${answer.lastName} added successfully to employees.\n`)
@@ -334,7 +320,7 @@ const updateRoles = async () => {
             }
         ]);
 
-        let result = await connection.query('UPDATE employees SET ? WHERE ?', [{ roles_title: rolesSelect.roles }, { id: employeeSelect.employees }]);
+        let result = await connection.query('UPDATE employees SET ? WHERE ?', [{ roles_id: rolesSelect.roles }, { id: employeeSelect.employees }]);
 
         console.log(`The roles has been updated successfully.\n`);
         initialQuestions();

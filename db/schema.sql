@@ -19,15 +19,10 @@ CREATE TABLE roles (
 );
 
 CREATE TABLE employees (
-    id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    id INT NOT NULL AUTO_INCREMENT,
     first_name VARCHAR(30) NOT NULL,
     last_name VARCHAR(30) NOT NULL,
     roles_id INT,
-    roles_title VARCHAR(30) NOT NULL,
-    department_name VARCHAR (30) NOT NULL,
-    roles_salary INT, 
     manager_id INT,
-    manager_first_name VARCHAR(30),
-    manager_last_name VARCHAR(30),
-    FOREIGN KEY (department_name) REFERENCES department(id)
+    PRIMARY KEY (id)
 );

@@ -28,23 +28,23 @@ VALUES('Office Manager', 82000, 1);
 INSERT INTO roles (title, salary, department_id)
 VALUES('Public Relations Director', 76000, 4);
 
-INSERT INTO employees (first_name, last_name, roles_id, roles_title, department_name, roles_salary, manager_id, manager_first_name, manager_last_name)
-VALUES ('Ron', 'Swanson', 1, 'Director', 'Parks Department', 65000, 1, null, null);
-INSERT INTO employees (first_name, last_name, roles_id, roles_title, department_name, roles_salary, manager_id, manager_first_name, manager_last_name)
-VALUES ('Leslie', 'Knope', 2, 'Deputy Director', 'Parks Department', 55000, 1, 'Ron', 'Swanson');
-INSERT INTO employees (first_name, last_name, roles_id, roles_title, department_name, roles_salary, manager_id, manager_first_name, manager_last_name)
-VALUES ('Donna', 'Meagle', 3, 'Permits Security', 'Parks Department', 50000, 1, 'Ron', 'Swanson');
-INSERT INTO employees (first_name, last_name, roles_id, roles_title, department_name, roles_salary, manager_id, manager_first_name, manager_last_name)
-VALUES ('Tom', 'Haverford', 4, 'Administrator', 'Parks Department', 50000, 1, 'Ron', 'Swanson');
-INSERT INTO employees (first_name, last_name, roles_id, roles_title, department_name, roles_salary, manager_id, manager_first_name, manager_last_name)
-VALUES ('Andy', 'Dwyer', 5, 'Utilities', 'Government of Pawnee', 52000, 1, 'Ron', 'Swanson');
-INSERT INTO employees (first_name, last_name, roles_id, roles_title, department_name, roles_salary, manager_id, manager_first_name, manager_last_name)
-VALUES ('April', 'Ludgate', 6, 'Assistant', 'Parks Department', 40000, 1, 'Ron', 'Swanson');
-INSERT INTO employees (first_name, last_name, roles_id, roles_title, department_name, roles_salary, manager_id, manager_first_name, manager_last_name)
-VALUES ('Chris', 'Traeger', 7, 'City Manager', 'City Manager', 95000, 7, null, null);
-INSERT INTO employees (first_name, last_name, roles_id, roles_title, department_name, roles_salary, manager_id, manager_first_name, manager_last_name)
-VALUES ('Ben', 'Wyatt', 8, 'Assistant City Manager', 'City Manager', 93000, 7, 'Chris', 'Treager');
-INSERT INTO employees (first_name, last_name, roles_id, roles_title, department_name, roles_salary, manager_id, manager_first_name, manager_last_name)
-VALUES ('Garry', 'Gergich', 9, 'Office Manager', 'Parks Department', 82000, 1, 'Ron', 'Swanson');
-INSERT INTO employees (first_name, last_name, roles_id, roles_title, department_name, roles_salary, manager_id, manager_first_name, manager_last_name)
-VALUES ('Ann', 'Perkins', 10, 'Public Relations Director', 'Health Department', 76000, 10, null, null);
+INSERT INTO employees (first_name, last_name, roles_id, manager_id)
+VALUES ('Ron', 'Swanson', 1, null);
+INSERT INTO employees (first_name, last_name, roles_id, manager_id)
+VALUES ('Leslie', 'Knope', 2, 1);
+INSERT INTO employees (first_name, last_name, roles_id, manager_id)
+VALUES ('Donna', 'Meagle', 3, 1);
+INSERT INTO employees (first_name, last_name, roles_id, manager_id)
+VALUES ('Tom', 'Haverford', 4, 1);
+INSERT INTO employees (first_name, last_name, roles_id, manager_id)
+VALUES ('Andy', 'Dwyer', 5, 1);
+INSERT INTO employees (first_name, last_name, roles_id, manager_id)
+VALUES ('April', 'Ludgate', 6, 1);
+INSERT INTO employees (first_name, last_name, roles_id, manager_id)
+VALUES ('Chris', 'Traeger', 7, null);
+INSERT INTO employees (first_name, last_name, roles_id, manager_id)
+VALUES ('Ben', 'Wyatt', 8, 7);
+INSERT INTO employees (first_name, last_name, roles_id, manager_id)
+VALUES ('Garry', 'Gergich', 9, 1);
+INSERT INTO employees (first_name, last_name, roles_id, manager_id)
+VALUES ('Ann', 'Perkins', 10, null);
