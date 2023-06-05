@@ -74,7 +74,7 @@ const initialQuestions = async () => {
                 addEmployees();
                 break;
 
-            case 'Add roles':
+            case 'Add Roles':
                 addRoles();
                 break;
 
