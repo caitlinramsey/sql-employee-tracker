@@ -243,12 +243,12 @@ const addRoles = async () => {
             {
                 name: 'title',
                 type: 'input',
-                message: 'What is the name of the new roles?'
+                message: 'What is the name of the new role?'
             },
             {
                 name: 'salary',
                 type: 'input',
-                message: 'What is the salary of the new roles?'
+                message: 'What is the salary of the new role?'
             },
             {
                 name: 'departmentId',
@@ -259,7 +259,7 @@ const addRoles = async () => {
                         value: departmentId.id
                     }
                 }),
-                message: 'What is the department ID that the new roles is associated with?'
+                message: 'What is the department ID that the new role is associated with?'
             },
         ]);
 
