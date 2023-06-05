@@ -234,7 +234,8 @@ const addEmployees = async () => {
             first_name: answer.firstName,
             last_name: answer.lastName,
             roles_title: (answer.employeeRolesId),
-            manager_id: (answer.employeeManagerId)
+            manager_id: (answer.employeeManagerId),
+            department_name: (answer.departmentId)
         });
 
         console.log(`${answer.firstName} ${answer.lastName} added successfully to employees.\n`)
