@@ -195,7 +195,7 @@ const addEmployees = async () => {
             },
             {
                 name: 'employeeRolesId',
-                type: 'input',
+                type: 'list',
                 choices: roles.map((roles) => {
                     return {
                         name: roles.title,
@@ -206,7 +206,7 @@ const addEmployees = async () => {
             },
             {
                 name: 'employeeManagerId',
-                type: 'input',
+                type: 'list',
                 choices: managers.map((manager) => {
                     return {
                         name: manager.first_name + " " + manager.last_name,
