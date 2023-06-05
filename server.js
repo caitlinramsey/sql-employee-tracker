@@ -62,7 +62,7 @@ const initialQuestions = async () => {
                 viewEmployees();
                 break;
 
-            case 'View roless':
+            case 'View Roles':
                 viewRoles();
                 break;
 
@@ -181,6 +181,8 @@ const addEmployees = async () => {
         let roles = await connection.query('SELECT * FROM roles');
 
         let managers = await connection.query('SELECT * FROM employees');
+        
+        let department = await connection.query('SELECT * FROM department');
 
         let answer = await inquirer.prompt([
             {
@@ -206,14 +208,25 @@ const addEmployees = async () => {
             },
             {
                 name: 'employeeManagerId',
-                type: 'list',
+                type: 'input',
                 choices: managers.map((manager) => {
                     return {
                         name: manager.first_name + " " + manager.last_name,
                         value: manager.id
                     }
                 }),
-                message: "What is this employee's manager's ID?"
+                message: "Who is this employee's manager's ID?"
+            },
+            {
+                name: 'departmentId',
+                type: 'list',
+                choices: department.map((department) => {
+                    return {
+                        name: department.department_name,
+                        value: department.id
+                    }
+                }),
+                message: 'What department is the employee being added to?'
             },
         ])
 

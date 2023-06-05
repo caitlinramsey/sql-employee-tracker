@@ -22,9 +22,11 @@ CREATE TABLE employees (
     id INT AUTO_INCREMENT NOT NULL,
     first_name VARCHAR(30) NOT NULL,
     last_name VARCHAR(30) NOT NULL,
+    roles_id INT,
     roles_title VARCHAR(30) NOT NULL,
     department_name VARCHAR (30) NOT NULL,
     roles_salary INT, 
+    manager_id INT,
     manager_first_name VARCHAR(30),
     manager_last_name VARCHAR(30),
     PRIMARY KEY (id)
