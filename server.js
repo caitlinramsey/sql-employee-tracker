@@ -202,7 +202,7 @@ const addEmployees = async () => {
                         value: roles.id
                     }
                 }),
-                message: "What is this employee's role ID?"
+                message: "What is this employee's role?"
             },
             {
                 name: 'employeeManagerId',
@@ -213,7 +213,7 @@ const addEmployees = async () => {
                         value: manager.id
                     }
                 }),
-                message: "Who is this employee's manager's ID?"
+                message: "Who is this employee's manager?"
             },
         ])
 
