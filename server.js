@@ -181,6 +181,18 @@ const addEmployees = async () => {
         let roles = await connection.query('SELECT * FROM roles');
 
         let managers = await connection.query('SELECT * FROM employees');
+        // let man1 =[ ...managers.map((manager) => {
+        //     return {
+        //         name: manager.first_name + " " + manager.last_name,
+        //         value: manager.id
+        //     }
+        // }),
+        // {
+        //     name: "None",
+        //     value: null
+        // } ]
+        // console.log(man1)
+
 
         let answer = await inquirer.prompt([
             {
@@ -207,12 +219,16 @@ const addEmployees = async () => {
             {
                 name: 'employeeManagerId',
                 type: 'list',
-                choices: managers.map((manager) => {
+                choices: [ ...managers.map((manager) => {
                     return {
                         name: manager.first_name + " " + manager.last_name,
                         value: manager.id
                     }
                 }),
+                {
+                    name: "None",
+                    value: null
+                } ],
                 message: "Who is this employee's manager?"
             },
         ])
